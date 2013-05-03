@@ -10,13 +10,11 @@ Basic Rails example using the Bonita API. The database gets seeded with a couple
 5. Go to `http://localhost:3000/applications` to see a list of all Applications; they all should be set to "Not Started".
 6. Click on Show to see a single Application. Here you can "Start" it, which creates the Process in Bonita. If you check the Bonita panel, the Process will have appeared there.
 
-## New Applications
-
 New Applications are created by posting XML to `/applications`. 
 
 Example XML:
 
     <application>
       <title>Testing</title>
-			<abr>123456</abr>
-		</application>
+      <abr>123456</abr>
+    </application>
