@@ -1,0 +1,9 @@
+<h2>Applications</h2>
+<% @applications.each do |app|%>
+<p>
+	<%= app.title %>, 
+	<%= app.abr %>, 
+	<%= app.process.nil? ? "Not started" : @processes[app.process] %>,
+	<%= link_to "Show", app %>
+</p>
+<% end %>

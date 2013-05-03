@@ -1,0 +1,12 @@
+<p><%= @app.title %></p>
+<p><%= @app.abr %></p>
+
+<% if @app.process.nil?%>
+	<p> Not started </p>
+	<p> <%= link_to "Start process", start_application_path %></p>
+<% else %>
+	<p><%= @app.process %> 
+	<p><%= @state %></p>
+<% end %>
+
+<p><%= link_to "Back to index", applications_path %></p>
