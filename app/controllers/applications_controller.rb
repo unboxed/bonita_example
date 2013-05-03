@@ -16,4 +16,13 @@ class ApplicationsController < ApplicationController
     @app.update_attributes(:process => response)
     redirect_to @app
   end
+  
+  def create
+    @app = Application.new(params[:application])
+    @app.save
+        
+    respond_to do |format|
+      format.xml {render :xml  => @app}
+    end
+  end
 end
