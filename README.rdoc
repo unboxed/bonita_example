@@ -1,11 +1,22 @@
 == Bonita Example
 
-Basic Rails example using the Bonita API. The database gets seeded with a couple of random Applications. The application index will show a list of all Applications. If an Application doesn't exist yet within Bonita, the user can start the process. If it does exist, it shows what state that process is in. 
+Basic Rails example using the Bonita API. The database gets seeded with a couple of random Applications. The application index will show a list of all Applications. If an Application doesn't exist yet within Bonita, the user can start the process. If it does exist, it shows what state that process is in. New Applications can be created by posting XML to the ApplicationsController
 
-0. Setup database settings (database.yml), and create+migrate the database ('rake db:create db:migrate')
+0. Setup database settings (database.yml), and create+migrate the database (`rake db:create db:migrate`)
 1. Setup Bonita with the example process MyProcess. Run it and go to the Admin panel.
-2. Check settings of 'config/bonita.yml'. These should match your username/password in Bonita (defaults are restuser, restbpm and localhost).
-3. Run 'rake db:seed' to seed the database.
-4. Run 'rails server' to start the server.
-5. Go to 'http://localhost:3000/applications' to see a list of all Applications; they all should be set to "Not Started".
+2. Check settings of `config/bonita.yml`. These should match your username/password in Bonita (defaults are restuser, restbpm and localhost).
+3. Run `rake db:seed` to seed the database.
+4. Run `rails server` to start the server.
+5. Go to `http://localhost:3000/applications` to see a list of all Applications; they all should be set to "Not Started".
 6. Click on Show to see a single Application. Here you can "Start" it, which creates the Process in Bonita. If you check the Bonita panel, the Process will have appeared there.
+
+## New Applications
+
+New Applications are created by posting XML to `/applications`. 
+
+Example XML:
+
+    <application>
+      <title>Testing</title>
+			<abr>123456</abr>
+		</application>
