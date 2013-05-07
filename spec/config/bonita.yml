@@ -1,0 +1,4 @@
+test:
+  user: "restuser"
+  password: "restbpm"
+  domain: "http://localhost:9090/bonita-server-rest/API"

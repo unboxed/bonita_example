@@ -26,7 +26,11 @@ class BonitaHandler
   end
   
   def config
-    @config ||= YAML.load_file("config/bonita.yml")[Rails.env].with_indifferent_access
+    @config ||= YAML.load_file(location)[Rails.env].with_indifferent_access
+  end
+  
+  def location
+    Rails.env.test? ? "spec/config/bonita.yml" : "config/bonita.yml"
   end
   
   def connection
